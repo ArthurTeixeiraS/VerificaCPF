@@ -50,9 +50,16 @@ ValidaCpf.prototype.isSequencia = function(){
     return sequencia === this.cpfLimpo
 }
 
-const cpf = new ValidaCpf('090.501.539-84')
-if(cpf.valida()){
-    console.log('CPF Válido')
-} else {
-    console.log('CPF Inválido')
-}
+document.getElementById('cpf-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+  
+    const cpfInput = document.getElementById('cpf-input');
+    const cpf = new ValidaCpf(cpfInput.value);
+  
+    if (cpf.valida()) {
+      document.getElementById('result').textContent = 'CPF Válido';
+    } else {
+      document.getElementById('result').textContent = 'CPF Inválido';
+    }
+  });
+  

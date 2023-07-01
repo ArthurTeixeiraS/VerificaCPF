@@ -1,0 +1,9 @@
+.div{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center
+}
+button, #result{
+    margin-top:10px;
+}
